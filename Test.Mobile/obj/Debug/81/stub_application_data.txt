@@ -1,2 +1,0 @@
-android.app.Application
-Test.Mobile.Test.Mobile

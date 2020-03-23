@@ -481,9 +481,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj",
-      "projectName": "Test.Mobile",
-      "projectPath": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj",
+      "projectUniqueName": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Android.Lab1.csproj",
+      "projectName": "Android.Lab1",
+      "projectPath": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Android.Lab1.csproj",
       "packagesPath": "C:\\Users\\Helen Kravchuk\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\obj\\",
       "projectStyle": "PackageReference",
