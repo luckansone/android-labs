@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj",
+        "projectName": "Test.Mobile",
+        "projectPath": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\Test.Mobile.csproj",
+        "packagesPath": "C:\\Users\\Helen Kravchuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Helen Kravchuk\\source\\repos\\Test.Mobile\\Test.Mobile\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Helen Kravchuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid81"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid81": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid81": {
+          "dependencies": {
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

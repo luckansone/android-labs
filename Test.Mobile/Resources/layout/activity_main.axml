@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:text="Shop"
+		android:gravity ="center"
+		android:textSize = "40px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" />
+	<TextView
+		android:text="Kind of dishes"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2" />
+	<Spinner
+		android:scrollbarSize="40px"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/spinner1" />
+	<TextView
+		android:text="Manufacturers"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="86.5dp"
+		android:id="@+id/linearLayout1" />
+	<TextView
+		android:text="Price range"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView3" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="82.5dp"
+		android:id="@+id/linearLayout2" />
+	<Button
+		android:text="Ok"
+		android:layout_width="match_parent"
+		android:layout_height="63.0dp"
+		android:id="@+id/button1" />
+</LinearLayout>
