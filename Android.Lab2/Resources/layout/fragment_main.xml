@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <TableRow>
+  <TableRow
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content">>
     <fragment
         class ="Android.Lab2.DishFragment"
         android:layout_width="match_parent"
@@ -13,7 +15,9 @@
         android:layout_weight="1"
         android:id="@+id/dishes"/>
   </TableRow>
-  <TableRow>
+  <TableRow
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content">>
     <fragment
         class ="Android.Lab2.CheckButtonFragment"
         android:layout_width="match_parent"
@@ -22,7 +26,9 @@
         android:gravity="center"
         android:id="@+id/checksfragment" />
   </TableRow>
-  <TableRow>
+  <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <fragment
         class ="Android.Lab2.ButtonFragment"
         android:layout_width="match_parent"
@@ -32,7 +38,9 @@
         android:id="@+id/buttonfragment"
         android:layout_marginBottom="0.0dp" />
   </TableRow>
-  <TableRow>
+  <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
         android:text=""
         android:layout_width="match_parent"

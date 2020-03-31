@@ -1,1 +1,1 @@
-<resources><string name="app_name">Android.Lab1</string><string name="action_settings">Settings</string></resources>
+<resources><string name="app_name">Android.Lab1</string><string name="action_settings">Settings</string><string-array name="Dishes"><item>Cups</item><item>Forks</item><item>Spoons</item><item>Knifes</item></string-array><string-array name="Manufacturers"><item>Gold age</item><item> Sweet home</item></string-array><string-array name="PriceRange"><item>400-500</item><item> 500-600</item><item>600-700</item></string-array></resources>

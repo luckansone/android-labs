@@ -1,6 +1,12 @@
+Test.Mobile.ListViewAdapter, Test.Mobile;crc645ca435c7386c7c28.ListViewAdapter
+Test.Mobile.ListViewAdapter;crc645ca435c7386c7c28.ListViewAdapter
+test.mobile.ListViewAdapter;crc645ca435c7386c7c28.ListViewAdapter
 Test.Mobile.MainActivity, Test.Mobile;crc645ca435c7386c7c28.MainActivity
 Test.Mobile.MainActivity;crc645ca435c7386c7c28.MainActivity
 test.mobile.MainActivity;crc645ca435c7386c7c28.MainActivity
+Test.Mobile.Resources.layout.OutputActivity, Test.Mobile;crc64e47b7f68dcca564c.OutputActivity
+Test.Mobile.Resources.layout.OutputActivity;crc64e47b7f68dcca564c.OutputActivity
+test.mobile.resources.layout.OutputActivity;crc64e47b7f68dcca564c.OutputActivity
 Android.Support.V4.View.ActionProvider+ISubUiVisibilityListenerImplementor, Xamarin.Android.Support.Compat;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
 Android.Support.V4.View.ActionProvider.ISubUiVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
 mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
