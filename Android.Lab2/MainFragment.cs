@@ -14,7 +14,6 @@ namespace Android.Lab2
 {
     public class MainFragment : Fragment, ButtonListener
     {
-
       private TextView result;
       private Choice Choice { get; set; }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -27,10 +26,10 @@ namespace Android.Lab2
         public void OkClick()
         {
 
-          DishFragment dishFragment =(DishFragment)ChildFragmentManager.FindFragmentById(Resource.Id.dishes);
+          AuthorFragment authorFragment =(AuthorFragment)ChildFragmentManager.FindFragmentById(Resource.Id.authors);
           CheckButtonFragment checkBoxFragment = (CheckButtonFragment)ChildFragmentManager.FindFragmentById(Resource.Id.checksfragment);
           Choice = checkBoxFragment.GetChoice();
-          Choice.SelectedDish = dishFragment.GetDish();
+          Choice.SelectedAuthor = authorFragment.GetAuthor();
 
           result.Text = CheckChoise();
         }
@@ -38,11 +37,10 @@ namespace Android.Lab2
         private string CheckChoise()
         {
             string res = String.Empty;
-            if (Choice.SelectedManyfacturers.Count != 0 && Choice.SelectedPriceRanges.Count != 0)
+            if (Choice.SelectedYears.Count != 0)
             {
-                res += $"Dish:{Choice.SelectedDish}\n" +
-                    $"Manufacturers:{GetResultFromCheckBoxGroup(ref Choice.SelectedManyfacturers)}\n" +
-                    $"Price ranges:{GetResultFromCheckBoxGroup(ref Choice.SelectedPriceRanges)} \n";
+                res += $"Author:{Choice.SelectedAuthor}\n" +
+                    $"Years of publication:{GetResultFromCheckBoxGroup(ref Choice.SelectedYears)}\n";
             }
             else
             {

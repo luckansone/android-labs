@@ -15,7 +15,6 @@ namespace Android.Lab2
     public class CheckButtonFragment: Fragment
     {
         private LinearLayout linearLayout1;
-        private LinearLayout linearLayout2;
         Choice Choice { get; set; }
         View view;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -23,13 +22,11 @@ namespace Android.Lab2
              view = inflater.Inflate(Resource.Layout.check_buttons_fragment, container, false);
 
             linearLayout1 = view.FindViewById<LinearLayout>(Resource.Id.linearLayout1);
-            linearLayout2 = view.FindViewById<LinearLayout>(Resource.Id.linearLayout2);
 
-            List<string> Manufacturers = Resources.GetStringArray(Resource.Array.Manufacturers).ToList();
-            List<string> PriceRange = Resources.GetStringArray(Resource.Array.PriceRange).ToList();
+            List<string> Years = Resources.GetStringArray(Resource.Array.Years).ToList();
+      
 
-            DataDisplay(ref linearLayout1,Manufacturers);
-            DataDisplay(ref linearLayout2, PriceRange);
+            DataDisplay(ref linearLayout1, Years);
 
             Choice = new Choice();
 
@@ -66,14 +63,8 @@ namespace Android.Lab2
 
                 string checkedName = checkbox.Text;
 
-                if (linearLayout1.FindViewById(checkbox.Id) != null)
-                {
-                    CheckSelectedItems(ref Choice.SelectedManyfacturers, checkedName, checkbox);
-                }
-                else
-                {
-                    CheckSelectedItems(ref Choice.SelectedPriceRanges, checkedName, checkbox);
-                }
+                CheckSelectedItems(ref Choice.SelectedYears, checkedName, checkbox);
+                
             }
         }
 

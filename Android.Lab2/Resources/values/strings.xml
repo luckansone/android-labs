@@ -1,21 +1,17 @@
 <resources>
     <string name="app_name">Android.Lab2</string>
     <string name="action_settings">Settings</string>
-  <string-array name="Dishes">
-    <item>Cups</item>
-    <item>Forks</item>
-    <item>Spoons</item>
-    <item>Knifes</item>
+  <string-array name="Authors">
+    <item>Pushkin</item>
+    <item>Tolstoy</item>
+    <item>Shevchenko</item>
   </string-array>
 
-  <string-array name="Manufacturers">
-    <item>Gold age</item>
-    <item> Sweet home</item>
+  <string-array name="Years">
+    <item>1864</item>
+    <item>1852</item>
+    <item>1863</item>
+    <item>1849</item>
   </string-array>
   
-  <string-array name="PriceRange">
-    <item>400-500</item>
-    <item> 500-600</item>
-    <item>600-700</item>
-  </string-array>
 </resources>

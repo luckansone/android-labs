@@ -8,12 +8,12 @@
          android:layout_width="match_parent"
         android:layout_height="wrap_content">>
     <fragment
-        class ="Android.Lab2.DishFragment"
+        class ="Android.Lab2.AuthorFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_weight="1"
-        android:id="@+id/dishes"/>
+        android:id="@+id/authors"/>
   </TableRow>
   <TableRow
          android:layout_width="match_parent"

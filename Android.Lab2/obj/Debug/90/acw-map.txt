@@ -4,9 +4,9 @@ android.lab2.ButtonFragment;crc64f2673bca7fa38b89.ButtonFragment
 Android.Lab2.CheckButtonFragment, Android.Lab2;crc64f2673bca7fa38b89.CheckButtonFragment
 Android.Lab2.CheckButtonFragment;crc64f2673bca7fa38b89.CheckButtonFragment
 android.lab2.CheckButtonFragment;crc64f2673bca7fa38b89.CheckButtonFragment
-Android.Lab2.DishFragment, Android.Lab2;crc64f2673bca7fa38b89.DishFragment
-Android.Lab2.DishFragment;crc64f2673bca7fa38b89.DishFragment
-android.lab2.DishFragment;crc64f2673bca7fa38b89.DishFragment
+Android.Lab2.AuthorFragment, Android.Lab2;crc64f2673bca7fa38b89.AuthorFragment
+Android.Lab2.AuthorFragment;crc64f2673bca7fa38b89.AuthorFragment
+android.lab2.AuthorFragment;crc64f2673bca7fa38b89.AuthorFragment
 Android.Lab2.MainActivity, Android.Lab2;crc64f2673bca7fa38b89.MainActivity
 Android.Lab2.MainActivity;crc64f2673bca7fa38b89.MainActivity
 android.lab2.MainActivity;crc64f2673bca7fa38b89.MainActivity

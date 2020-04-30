@@ -1,8 +1,8 @@
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+Android.Lab2.AuthorFragment;obj\Debug\90\res\layout\fragment_main.xml
 Android.Lab2.ButtonFragment;obj\Debug\90\res\layout\fragment_main.xml
 Android.Lab2.CheckButtonFragment;obj\Debug\90\res\layout\fragment_main.xml
-Android.Lab2.DishFragment;obj\Debug\90\res\layout\fragment_main.xml
 Android.Lab2.MainFragment;obj\Debug\90\res\layout\activity_main.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
@@ -19,20 +19,20 @@ fragment;obj\Debug\90\res\layout\fragment_main.xml
 item;obj\Debug\90\res\values\strings.xml
 item;obj\Debug\90\res\values\styles.xml
 LinearLayout;obj\Debug\90\res\layout\activity_main.xml
+LinearLayout;obj\Debug\90\res\layout\author_fragment.xml
 LinearLayout;obj\Debug\90\res\layout\button_fragment.xml
 LinearLayout;obj\Debug\90\res\layout\check_buttons_fragment.xml
-LinearLayout;obj\Debug\90\res\layout\dish_fragment.xml
 paths;C:\Users\Helen Kravchuk\source\repos\Test.Mobile\Android.Lab2\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
-Spinner;obj\Debug\90\res\layout\dish_fragment.xml
+Spinner;obj\Debug\90\res\layout\author_fragment.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
 TableLayout;obj\Debug\90\res\layout\fragment_main.xml
 TableRow;obj\Debug\90\res\layout\fragment_main.xml
+TextView;obj\Debug\90\res\layout\author_fragment.xml
 TextView;obj\Debug\90\res\layout\check_buttons_fragment.xml
-TextView;obj\Debug\90\res\layout\dish_fragment.xml
 TextView;obj\Debug\90\res\layout\fragment_main.xml

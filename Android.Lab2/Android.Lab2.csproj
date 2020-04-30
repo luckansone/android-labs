@@ -64,7 +64,7 @@
     <Compile Include="ButtonListener.cs" />
     <Compile Include="CheckButtonFragment.cs" />
     <Compile Include="Choice.cs" />
-    <Compile Include="DishFragment.cs" />
+    <Compile Include="AuthorFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainFragment.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -111,7 +111,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\dish_fragment.xml">
+    <AndroidResource Include="Resources\layout\author_fragment.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

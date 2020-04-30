@@ -14,15 +14,14 @@ namespace Android.Lab2
 {
     public class Choice
     {
-        public List<string> SelectedManyfacturers;
-        public List<string> SelectedPriceRanges;
-        public string SelectedDish { get; set; }
+        public List<string> SelectedYears;
+   
+        public string SelectedAuthor { get; set; }
 
         public Choice()
         {
-            SelectedManyfacturers = new List<string>();
-            SelectedPriceRanges = new List<string>();
-            SelectedDish = String.Empty;
+            SelectedYears = new List<string>();
+            SelectedAuthor = String.Empty;
         }
     }
 }
