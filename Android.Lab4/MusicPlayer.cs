@@ -17,61 +17,57 @@ namespace Lab4
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MusicPlayer: AppCompatActivity
     {
-        private List<int> audioId = new List<int> { Resource.Raw.MozartMusic, Resource.Raw.BeethovenMusic, Resource.Raw.StraussMusic};
-        private List<string> audioName;
-        private Dictionary<string, int> audioDict = new Dictionary<string, int>();
-        private string LastPlayVideo { get; set; }
-
         private MediaPlayer mPlayer;
-        private Button playButton, pauseButton, stopButton;
-        private Spinner spinner;
+        private Button playButton, pauseButton, stopButton, chooseButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.activity_music);
 
-            LastPlayVideo = String.Empty;
-
-            audioName = Resources.GetStringArray(Resource.Array.Name).ToList();
-
-            InitializeSpinner();
-
             playButton = FindViewById<Button>(Resource.Id.play1);
             pauseButton = FindViewById<Button>(Resource.Id.pause1);
             stopButton = FindViewById<Button>(Resource.Id.stop1);
+            chooseButton = FindViewById<Button>(Resource.Id.choose3);
 
             pauseButton.Enabled = false;
             stopButton.Enabled = false;
+            playButton.Enabled = false;
 
             playButton.Click += PlayButton_Click;
             stopButton.Click += StopButton_Click;
             pauseButton.Click += PauseButton_Click;
-            spinner.ItemSelected += Spinner_ItemSelected;
-          
+            chooseButton.Click += ChooseButton_Click;
         }
 
-        private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void ChooseButton_Click(object sender, EventArgs e)
         {
-            playButton.Enabled = true;
+            Intent intent = new Intent(Intent.ActionGetContent);
+            intent.SetType("audio/*");
+            intent.AddCategory(Intent.CategoryOpenable);
+            StartActivityForResult(intent, 1);
         }
 
-        private void InitializeSpinner()
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
-            for (int i = 0; i < audioName.Count; i++)
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (requestCode == 1)
             {
-                audioDict.Add(audioName[i], audioId[i]);
+                try
+                {
+                    var audioPath = data.Data;
+                    mPlayer = MediaPlayer.Create(this, audioPath);
+                    playButton.Enabled = true;
+                }
+                catch
+                {
+                    playButton.Enabled = false;
+                    stopButton.Enabled = false;
+                    pauseButton.Enabled = false;
+                    Toast.MakeText(this, "You don't choose audio to play.", ToastLength.Short).Show();
+                }
             }
-
-            spinner = FindViewById<Spinner>(Resource.Id.spinner2);
-            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Name, Android.Resource.Layout.SimpleSpinnerItem);
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = adapter;
-        }
-
-        private void InitializeAudioPlayer(string songName)
-        {
-            mPlayer = MediaPlayer.Create(this, audioDict[songName]);
         }
 
         private void PauseButton_Click(object sender, EventArgs e)
@@ -89,17 +85,8 @@ namespace Lab4
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            string audioName = spinner.SelectedItem.ToString();
-
-            if (!audioName.Equals(LastPlayVideo) && !LastPlayVideo.Equals(String.Empty))
-            {
-                StopPlay();
-                
-            }
-
-            InitializeAudioPlayer(audioName);
+            
             mPlayer.Start();
-            LastPlayVideo = audioName;
             playButton.Enabled = false;
             pauseButton.Enabled = true;
             stopButton.Enabled = true;

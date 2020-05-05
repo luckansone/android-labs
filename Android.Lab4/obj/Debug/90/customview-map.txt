@@ -24,8 +24,6 @@ resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
-Spinner;obj\Debug\90\res\layout\activity_music.xml
-Spinner;obj\Debug\90\res\layout\activity_video.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml

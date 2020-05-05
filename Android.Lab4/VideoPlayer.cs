@@ -10,21 +10,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Uri = Android.Net.Uri;
+using Android.Content;
 
 namespace Lab4
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class VideoPlayer: AppCompatActivity
     {
-        private List<int> videoId = new List<int> { Resource.Raw.Mozart, Resource.Raw.Beethoven, Resource.Raw.Strauss};
-        private List<string> videoName;
-        private Dictionary<string, int> videoDict = new Dictionary<string, int>();
-        private string LastPlayVideo { get; set; }
-
-
-        private Spinner spinner;
         private VideoView videoPlayer;
-        private Button startButton, stopButton, pauseButton;
+        private Button startButton, stopButton, pauseButton, chooseButton1;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -34,48 +28,51 @@ namespace Lab4
             startButton = FindViewById<Button>(Resource.Id.play);
             stopButton = FindViewById<Button>(Resource.Id.stop);
             pauseButton = FindViewById<Button>(Resource.Id.pause);
+            chooseButton1 = FindViewById<Button>(Resource.Id.choose);
+            videoPlayer = (VideoView)FindViewById(Resource.Id.videoPlayer);
 
-            LastPlayVideo = String.Empty;
-
-            videoName = Resources.GetStringArray(Resource.Array.Name).ToList();
-
-            InitializeSpinner();
+            startButton.Enabled = false;
             stopButton.Enabled = false;
             pauseButton.Enabled = false;
-
-
+            
             startButton.Click += StartButton_Click;
             stopButton.Click += StopButton_Click;
             pauseButton.Click += PauseButton_Click;
+            chooseButton1.Click += ChooseButton1_Click;
         }
 
-        private void InitializeSpinner()
+
+
+        private void ChooseButton1_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < videoName.Count; i++)
+            Intent intent = new Intent(Intent.ActionGetContent);
+            intent.SetType("video/mp4");
+            intent.AddCategory(Intent.CategoryOpenable);
+            StartActivityForResult(intent, 1);
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (requestCode == 1)
             {
-                videoDict.Add(videoName[i], videoId[i]);
+                try
+                {
+                    var videoPath = data.Data;
+                    videoPlayer.SetVideoURI(videoPath);
+                    MediaController mediaController = new MediaController(this);
+                    mediaController.SetAnchorView(videoPlayer);
+                    videoPlayer.SetMediaController(mediaController);
+                    startButton.Enabled = true;
+                }
+                catch
+                {
+                    startButton.Enabled = false;
+                    stopButton.Enabled = false;
+                    pauseButton.Enabled = false;
+                    Toast.MakeText(this, "You don't choose video to play.", ToastLength.Short).Show();
+                }
             }
-
-            spinner = FindViewById<Spinner>(Resource.Id.spinner1);
-            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Name, Android.Resource.Layout.SimpleSpinnerItem);
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-            spinner.Adapter = adapter;
-        }
-
-        private void InitializeVideoPlayer(string videoName)
-        {
-            videoPlayer = (VideoView)FindViewById(Resource.Id.videoPlayer);
-            Android.Net.Uri videoUri = Uri.Parse("android.resource://" + Application.PackageName + "/" + videoDict[videoName]);
-            videoPlayer.SetVideoURI(videoUri);
-            MediaController mediaController = new MediaController(this);
-            mediaController.SetAnchorView(videoPlayer);
-            videoPlayer.SetMediaController(mediaController);
-            spinner.ItemSelected += Spinner_ItemSelected;
-        }
-
-        private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
-        {
-            startButton.Enabled = true;
         }
 
         private void PauseButton_Click(object sender, System.EventArgs e)
@@ -97,23 +94,11 @@ namespace Lab4
 
         private void StartButton_Click(object sender, System.EventArgs e)
         {
-            string videoName = spinner.SelectedItem.ToString();
-
-            if(!videoName.Equals(LastPlayVideo) && !LastPlayVideo.Equals(String.Empty))
-            {
-                videoPlayer.StopPlayback();
-            }
-
-            InitializeVideoPlayer(videoName);
             videoPlayer.RequestFocus();
             videoPlayer.Start();
-
-            LastPlayVideo = videoName;
-
             startButton.Enabled = false;
             pauseButton.Enabled = true;
             stopButton.Enabled = true;
-            
         }
     }
 }
